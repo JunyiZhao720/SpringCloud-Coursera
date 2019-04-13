@@ -17,10 +17,17 @@
  */
 package org.magnum.dataup;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.magnum.dataup.model.Video;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class AnEmptyController {
+public class VideoController {
 
 	/**
 	 * You will need to create one or more Spring controllers to fulfill the
@@ -39,4 +46,18 @@ public class AnEmptyController {
 	 * 
 	 */
 	
+	private List<Video> videos = new ArrayList<>();
+	
+	
+	@RequestMapping(value = "/video", method = RequestMethod.GET)
+	public 
+	@ResponseBody List<Video> getVideos() {
+		return videos;
+	}
+	
+//	@RequestMapping(value = "/video", method = RequestMethod.POST)
+//	public 
+//	@ResponseBody List<Video> addVideos() {
+//		return videos;
+//	}
 }
